@@ -6,7 +6,16 @@
 
 <form method="POST" action="">
     {% csrf_token %}
-    {{ task_form }}
+    <div class="form-group">
+        {{ task_form.title.errors }}
+        <label for="{{ task_form.title.id_for_label }}">Task:</label>
+        {{ task_form.title }}
+    </div>
+    <div class="form-group form-check">
+        {{ task_form.complete.errors }}
+        {{ task_form.complete }}
+        <label for="{{ task_form.complete.id_for_label }}">Complete</label>
+    </div>
     <input type="submit" name="update_task" value="Update" class="btn btn-sm btn-success">
 </form>
 

@@ -7,9 +7,10 @@
 <form method="POST" action="/">
     <div class="form-group">
         {% csrf_token %}
+        {{ task_form.title.errors }}
         {{ task_form.title }}
-        <input type="submit" name="create_task" value="Create" class="btn btn-sm btn-primary">
     </div>
+    <input type="submit" name="create_task" value="Add Task" class="btn btn-sm btn-primary" style="width: 100%; margin-bottom: 1rem;">
 </form>
 
 <ul class="list-group list-group-flush">
