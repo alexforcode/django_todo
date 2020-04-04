@@ -1,9 +1,15 @@
-<h3>Update Task</h3>
+{% extends 'tasks/_base.html' %}
+
+{% block title %}Update Task{% endblock %}
+
+{% block content %}
 
 <form method="POST" action="">
     {% csrf_token %}
     {{ task_form }}
-    <input type="submit" name="update_task" value="Update">
+    <input type="submit" name="update_task" value="Update" class="btn btn-sm btn-success">
 </form>
 
 <a href="{% url 'list' %}">Go back</a>
+
+{% endblock %}
